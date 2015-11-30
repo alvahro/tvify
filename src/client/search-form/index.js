@@ -8,11 +8,11 @@ import page from 'page'
 $('#app-body')
   .find('form')
   .submit(function (ev) {
-    ev.preventDefault();
-    
+    ev.preventDefault()
+
     var busqueda = $(this)
       .find('input[type="text"]')
-      .val();
+      .val()
 
     page(`/search?q=${busqueda}`)
   })

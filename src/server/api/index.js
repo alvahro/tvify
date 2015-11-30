@@ -1,11 +1,10 @@
 import express from 'express'
-const router = express.Router()
-
 import Vote from 'src/server/models'
 
-// GET  /api/votes
+const router = express.Router()
+
+// GET /api/votes
 router.get('/votes', (req, res) => {
-  console.log('GET /votes')
   Vote.find({}, (err, docs) => {
     if (err) {
       return res.sendStatus(500).json(err)
@@ -16,7 +15,7 @@ router.get('/votes', (req, res) => {
 
 // POST /api/vote/123
 router.post('/vote/:id', (req, res) => {
-  var onSave = function (vote) {
+  let onSave = function (vote) {
     return function (err) {
       if (err) {
         return res.sendStatus(500).json(err)
@@ -28,7 +27,7 @@ router.post('/vote/:id', (req, res) => {
   let id = req.params.id
 
   Vote.findOne({ showId: id }, (err, doc) => {
-    if (doc) {
+    if (!err && doc) {
       // actualizo este doc
       doc.count = doc.count + 1
       doc.save(onSave(doc))

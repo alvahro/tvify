@@ -4,7 +4,7 @@
 
 import $ from 'jquery'
 
-export function getShows(fn) {
+export function getShows (fn) {
   $.ajax('http://api.tvmaze.com/shows', {
     success: function (shows, textStatus, xhr) {
       $.get('/api/votes', function (votes) {
@@ -20,7 +20,7 @@ export function getShows(fn) {
   })
 }
 
-export function searchShows(busqueda, fn) {
+export function searchShows (busqueda, fn) {
   $.ajax('http://api.tvmaze.com/search/shows', {
     data: busqueda,
     success: function (res, textStatus, xhr) {

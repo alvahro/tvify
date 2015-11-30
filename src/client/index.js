@@ -12,26 +12,24 @@ import qs from 'qs'
 
 page('/', function (ctx, next) {
   $tvShowsContainer.find('.tv-show').remove()
-  // Quito LocalStorage para que funcione el count
   getShows(function (shows) {
-    $tvShowsContainer.find('.loader').remove();
-    localStorage.shows = JSON.stringify(shows);
-    renderShows(shows);
+    $tvShowsContainer.find('.loader').remove()
+    renderShows(shows)
   })
 })
 
 page('/search', function (ctx, next) {
   $tvShowsContainer.find('.tv-show').remove()
-  var $loader = $('<div class="loader">');
-  $loader.appendTo($tvShowsContainer);
+  var $loader = $('<div class="loader">')
+  $loader.appendTo($tvShowsContainer)
   const busqueda = qs.parse(ctx.querystring)
   searchShows(busqueda, function (res) {
-    $loader.remove();
+    $loader.remove()
     var shows = res.map(function (el) {
-      return el.show;
+      return el.show
     })
 
-    renderShows(shows);
+    renderShows(shows)
   })
 })
 

@@ -17,18 +17,18 @@ var template = `<article data-id=:id: class="tv-show">
           </div>
         </article>`
 
-export default function renderShows(shows) {
-  $tvShowsContainer.find('.loader').remove();
+export default function renderShows (shows) {
+  $tvShowsContainer.find('.loader').remove()
   shows.forEach(function (show) {
     var article = template
       .replace(':name:', show.name)
       .replace(':img:', show.image ? show.image.medium : '')
       .replace(':summary:', show.summary)
-      .replace(':img alt:', show.name + " Logo")
+      .replace(':img alt:', show.name + ' Logo')
       .replace(':id:', show.id)
       .replace(':count:', show.count)
 
     var $article = $(article)
-    $tvShowsContainer.append($article.fadeIn(1500));
+    $tvShowsContainer.append($article.fadeIn(1500))
   })
 }

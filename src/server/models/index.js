@@ -1,8 +1,10 @@
-import mongoose from 'mongoose'
+import mongoose, { Schema } from 'mongoose'
 
-let VoteSchema = new mongoose.Schema({
+let VoteSchema = new Schema({
   showId: { type: Number, required: true, unique: true },
   count: { type: Number, default: 0 }
 })
 
-export default mongoose.model('Vote', VoteSchema)
+let model = mongoose.model('Vote', VoteSchema)
+
+export default model

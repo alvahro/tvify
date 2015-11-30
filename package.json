@@ -13,15 +13,17 @@
     "qs": "^6.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.2.0"
+    "babel-cli": "^6.2.0",
+    "standard": "^5.4.1"
   },
   "scripts": {
     "public": "mkdir -p public",
+    "lint": "standard",
     "build-js": "NODE_PATH=. browserify -t [ babelify --presets [ es2015 ] ] src/client/index.js > public/app.js",
     "copy-files": "cp src/client/index.css public/app.css && cp src/client/index.html public/index.html",
     "build": "npm run public && npm run build-js && npm run copy-files",
-    "dist": "babel src/server/index.js src/server/**/*.js --out-dir bin --presets es2015",
-    "serve": "NODE_PATH=. babel-node src/server --presets es2015",
-    "start": "npm run build && npm run serve"
+    "dist": "babel src/server/index.js src/server/**/*.js --out-dir dist --presets es2015",
+    "serve": "NODE_PATH=./dist node dist/src/server",
+    "start": "npm run lint && npm run dist && npm run build && npm run serve"
   }
 }
