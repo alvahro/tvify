@@ -23,12 +23,8 @@ page('/search', function (ctx, next) {
   var $loader = $('<div class="loader">')
   $loader.appendTo($tvShowsContainer)
   const busqueda = qs.parse(ctx.querystring)
-  searchShows(busqueda, function (res) {
+  searchShows(busqueda, function (shows) {
     $loader.remove()
-    var shows = res.map(function (el) {
-      return el.show
-    })
-
     renderShows(shows)
   })
 })

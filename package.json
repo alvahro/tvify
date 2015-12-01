@@ -10,7 +10,8 @@
     "jquery": "^2.1.4",
     "mongoose": "^4.2.8",
     "page": "^1.6.4",
-    "qs": "^6.0.0"
+    "qs": "^6.0.0",
+    "tv-maze": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.2.0",
