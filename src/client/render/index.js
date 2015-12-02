@@ -14,6 +14,7 @@ var template = `<article data-id=:id: class="tv-show">
             <p>:summary:</p>
             <button class="like">💖</button>
             <span class="count">:count:</span>
+            <button class="chat">💬</button>
           </div>
         </article>`
 
