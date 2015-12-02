@@ -22,7 +22,7 @@ io.on('connection', (socket) => {
     incrementVote(id, (err, vote) => {
       if (err) return socket.emit('vote:error', err)
 
-      socket.emit('vote:done', vote)
+      io.sockets.emit('vote:done', vote)
     })
   })
 })
