@@ -1,4 +1,7 @@
 node_modules
 public
 dist
+*.tgz
+*.log
 .DS_Store
+

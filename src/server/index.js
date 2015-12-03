@@ -16,7 +16,7 @@ app.use(express.static('public'))
 app.use('/api', api)
 
 io.on('connection', (socket) => {
-  console.log(`Connected ${socket.id}`)
+  console.log(`Connected ${socket.id} on instance ${port}`)
 
   socket.on('vote', id => {
     incrementVote(id, (err, vote) => {
