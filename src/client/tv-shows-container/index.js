@@ -24,6 +24,7 @@ $tvShowsContainer.on('click', 'button.chat', function (ev) {
   let $article = $this.closest('.tv-show')
   let id = $article.data('id')
 
+  socket.emit('join', 'show-' + id)
   page('/chat/' + id)
 })
 
