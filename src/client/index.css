@@ -62,6 +62,13 @@ body {
   position: relative;
 }
 
+.chat-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 16px;
+  background-color: white;
+}
+
 .tv-show:hover {
   background-color: #ecf0f1;
 }
@@ -114,8 +121,39 @@ body {
   width: 20%;
 }
 
+.chat-container
+.img-container {
+  width: 20%;
+}
+
 .tv-show img {
   max-width: 100%;
+}
+
+.chat-container img {
+   max-width: 100%;
+}
+
+.chat-container .chat-window {
+  width: 75%;
+}
+
+.chat-container .chat-body {
+   min-height: 200px;
+   border: 1px solid #efefef;
+   padding: 10px;
+   margin-bottom: 5px;
+}
+
+.chat-container .chat-nick {
+  width: 25%;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.chat-container .chat-input {
+   width: 65%;
+   font-size: 16px;
 }
 
 .tv-show .info {
