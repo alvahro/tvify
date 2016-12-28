@@ -6,16 +6,16 @@ const router = express.Router()
 const client = tvmaze.createClient()
 
 // Convendria tener un archivo o modulo aparte para estas funciones de utilidad
-function addVotes(shows, callback) {
+function addVotes (shows, callback) {
   Vote.find({}, (err, votes) => {
     if (err) votes = []
-    
+
     shows = shows.map((show) => {
       let vote = votes((vote) => vote.showId === show.id)[0]
       show.count = vote ? vote.count : 0
       return show
     })
-    
+
     callback(shows)
   })
 }
