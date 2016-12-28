@@ -25,7 +25,7 @@ router.get('/shows', (req, res) => {
     if (err) {
       return res.sendStatus(500).json(err)
     }
-    addVotes(shows, (shows) => {
+    addVotes(shows, shows => {
       res.json(shows)
     })
   })
