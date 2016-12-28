@@ -12,8 +12,8 @@ import socketio from 'socket.io-client'
  * Desde este socket yo puedo escuchar o emitir eventos.
  */
 let socket = socketio()
-socketio.emit('ping')
-socketio.on('pong', function () {
+  socket.emit('ping')
+  socket.on('pong', function () {
   console.log('pong')
 })
 

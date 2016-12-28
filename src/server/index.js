@@ -1,19 +1,19 @@
 import http from 'http'
 import express from 'express'
 import api from 'src/server/api'
-import mongoose from 'mongoose' 
+import mongoose from 'mongoose'
 import socketio from 'socket.io'
 
 const app = express()
 /*
- * No va a ser Express quien maneje el servidor web http, sino que lo vamos a 
+ * No va a ser Express quien maneje el servidor web http, sino que lo vamos a
  * hacer manualmente sin con el modulo nativo http.
  * Sin embargo, al pasar la app de Express como argumetno a createServer()
  * vamos a permitr a Express manejar los requests.
  * Esto lo hacemos para poder "enganchar" SocketIO al servidor web http.
  */
 const server = http.createServer(app)
-const io =  socketio(server)
+const io = socketio(server)
 const port = process.env.PORT || 3000
 
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/tvify')
