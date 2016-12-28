@@ -10,7 +10,7 @@ function addVotes (shows, callback) {
   Vote.find({}, (err, votes) => {
     if (err) votes = []
 
-    shows = shows.map((show) => {
+    shows = shows.map(show => {
       let vote = votes((vote) => vote.showId === show.id)[0]
       show.count = vote ? vote.count : 0
       return show
