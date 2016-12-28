@@ -5,7 +5,7 @@ import mongoose from 'mongoose'
 const app = express()
 const port = process.env.PORT || 3000
 
-//TESTING
+// TESTING
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/tvify')
 
 console.log(process.env.MONGOLAB_URI)
