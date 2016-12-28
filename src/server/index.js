@@ -21,9 +21,8 @@ mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/tvify')
 app.use(express.static('public'))
 
 /*
- * SocketIO al igual que node se basa en una metodología de EVENTOS
- * El parámetro socket representa el canal o socket entre un cliente especifico 
- * y el servidor.
+ * SocketIO al igual que node se basa en una metodologia de EVENTOS. El parametro
+ * socket representa el canal o socket entre un cliente especifico y el servidor.
  */
 io.on('connection', (socket) => {
   console.log('Connected ${socket.id}') // cada socket tiene un id
