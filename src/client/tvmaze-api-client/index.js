@@ -8,7 +8,7 @@ export function getShows (fn) {
   $.ajax('/api/shows', {
     success: function (shows, textStatus, xhr) {
       fn(shows)
-    } 
+    }
   })
 }
 
