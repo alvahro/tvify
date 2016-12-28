@@ -11,6 +11,8 @@
     "mongoose": "^4.2.8",
     "page": "^1.6.4",
     "qs": "^6.0.0",
+    "socket.io": "^1.7.2",
+    "socket.io-client": "^1.7.2",
     "tv-maze": "^1.0.0"
   },
   "devDependencies": {
