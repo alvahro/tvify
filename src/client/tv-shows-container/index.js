@@ -3,6 +3,19 @@
  */
 
 import $ from 'jquery'
+import socketio from 'socket.io-client'
+
+/*
+ * Conecta el cliente al servidor mediante WebSocket usando SocketIO
+ * Por defecto se conecta al servidor "actual" pero puedo pasar una ruta de otro
+ * servidor.
+ * Desde este socket yo puedo escuchar o emitir eventos.
+ */
+let socket = socketio()
+socketio.emit('ping')
+socketio.on('pong', function () {
+  console.log('pong')
+})
 
 var $tvShowsContainer = $('#app-body').find('.tv-shows')
 
